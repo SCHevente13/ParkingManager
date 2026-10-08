@@ -88,7 +88,38 @@
                 }
             }
             ConsoleView.ShowMessage($"Name of garage: {garage.Name} | Capacity: {garage.Capacity} | Current count of cars: {garage.Vehicles.Count}");
-
+            if (garage.FindByPlate("AAA-001") != null)
+            {
+                ConsoleView.ShowMessage("Found");
+            }
+            else
+            {
+                ConsoleView.ShowMessage("Not Found");
+            }
+            if (garage.FindByPlate("AAA-011") != null)
+            {
+                ConsoleView.ShowMessage("Found");
+            }
+            else
+            {
+                ConsoleView.ShowMessage("Not Found");
+            }
+            if (garage.RemoveVehicle("AAA-001"))
+            {
+                ConsoleView.ShowMessage("Deleted succesfully");
+            }
+            else
+            {
+                ConsoleView.ShowMessage("Deletion failed");
+            }
+            if (garage.AddVehicle(vehicles[3]))
+            {
+                ConsoleView.ShowMessage("Successfully added vehicle to garage");
+            }
+            else
+            {
+                ConsoleView.ShowMessage("Garage is full");
+            }
         }
     }
 }
