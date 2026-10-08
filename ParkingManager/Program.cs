@@ -120,6 +120,9 @@
             {
                 ConsoleView.ShowMessage("Garage is full");
             }
+            ConsoleView.ShowMessage("Vehicles with low balance:");
+            ConsoleView.ShowVehicles(garage.LowBalance());
+
         }
     }
 }
