@@ -75,6 +75,20 @@
             }
             ConsoleView.ShowVehicles(vehicles);
             ConsoleView.ShowMessage($"Count of vehicles made: {vehicles.Count}");
+            Garage garage = new Garage("The Big One", 3);
+            foreach (Vehicle v in vehicles)
+            {
+                if (garage.AddVehicle(v))
+                {
+                    ConsoleView.ShowMessage("Successfully added vehicle to garage");
+                }
+                else
+                {
+                    ConsoleView.ShowMessage("Garage is full");
+                }
+            }
+            ConsoleView.ShowMessage($"Name of garage: {garage.Name} | Capacity: {garage.Capacity} | Current count of cars: {garage.Vehicles.Count}");
+
         }
     }
 }
