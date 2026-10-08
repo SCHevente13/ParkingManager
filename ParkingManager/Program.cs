@@ -122,7 +122,8 @@
             }
             ConsoleView.ShowMessage("Vehicles with low balance:");
             ConsoleView.ShowVehicles(garage.LowBalance());
-
+            ConsoleView.ShowMessage($"Total hours: {garage.TotalHours()}");
+            ConsoleView.ShowVehicle(garage.LongestParked());
         }
     }
 }
