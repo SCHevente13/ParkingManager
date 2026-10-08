@@ -15,7 +15,7 @@ namespace ParkingManager
         private int _balance { get; set; }
         private int _hoursParked { get; set; }
         public string Plate { get { return _plate; } set { value = _plate; } }
-        public int Year { get { return _year; } set { value = _year > 1990 && _year < 2026 ? _year : 0; } }
+        public int Year { get { return _year > 1990 && _year < 2026 ? _year : 0; } set { value = _year > 1990 && _year < 2026 ? _year : 0; } }
         public bool IsElectric { get { return _isElectric; } set { value = _isElectric; } }
         public static int Count { get { return _count; } }
         public int Balance { get { return _balance; } }
@@ -36,7 +36,7 @@ namespace ParkingManager
         {
             if (_isElectric)
             {
-                if (_balance - hours * 200 >= 0 && _hoursParked >= 1)
+                if (_balance - (hours * 200) >= 0 && _hoursParked >= 0)
                 {
                     _hoursParked += hours;
                     _balance -= 200 * hours;
@@ -44,7 +44,7 @@ namespace ParkingManager
                 }
                 return false;
             }
-            if (_balance - hours * 400 >= 0 && _hoursParked >= 1)
+            if (_balance - (hours * 400) >= 0 && _hoursParked >= 0)
             {
                 _hoursParked += hours;
                 _balance -= 400 * hours;

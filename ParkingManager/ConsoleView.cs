@@ -8,11 +8,11 @@ namespace ParkingManager
 {
     internal class ConsoleView
     {
-        public void ShowVehicle(Vehicle vehicle)
+        public static void ShowVehicle(Vehicle vehicle)
         {
             Console.WriteLine(vehicle.GetDescription());
         }
-        public void ShowVehicles(List<Vehicle> vehicles)
+        public static void ShowVehicles(List<Vehicle> vehicles)
         {
             Console.WriteLine("Vehicles in the list:");
             foreach (Vehicle v in vehicles)
@@ -20,7 +20,7 @@ namespace ParkingManager
                 Console.WriteLine($" - {v.GetDescription()}");
             }
         }
-        public void ShowMessage(string message)
+        public static void ShowMessage(string message)
         {
             Console.WriteLine(message);
         }
